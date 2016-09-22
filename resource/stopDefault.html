@@ -1,0 +1,23 @@
+<script>
+	function cli1(obj, ev){
+		alert("This is cli1");
+	}
+
+	function cli2(obj, ev){
+
+		alert("This is cli2");
+
+		var e = (ev)?ev:window.event;
+		if(window.event){
+			e.cancelBubble = true;
+		}
+		else
+		{
+			e.stopPropagation();
+		}
+	}
+</script>
+<div id="p1" style="width: 400px; height: 400px; background: #dd3;" onclick="cli1(this)">
+	<div id="p2" style="width: 200px; height: 200px; background: #1a5;" onclick="cli2(this)">
+	</div>
+</div>
